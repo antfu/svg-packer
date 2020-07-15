@@ -1,0 +1,37 @@
+{
+  "name": "svg-pack",
+  "version": "0.0.1",
+  "description": "Pack SVGs to Icon Fonts - In Browser!",
+  "main": "index.js",
+  "jsdelivr": "dist/index.browser.js",
+  "unpkg": "dist/index.browser.js",
+  "scripts": {
+    "build": "rimraf dist && mkdirp dist && browserify index.js --im -o dist/index.browser.js",
+    "prepublish": "yarn build"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "dependencies": {
+    "jszip": "2.5.0",
+    "readable-stream": "latest",
+    "svgicons2svgfont": "9.1.1",
+    "svg2ttf": "5.0.0",
+    "ttf2eot": "2.0.0",
+    "ttf2woff": "2.0.2",
+    "ttf2woff2": "^3.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.2.13",
+    "browserify": "latest",
+    "eslint": "^7.4.0",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2"
+  },
+  "author": "Anthony Fu",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
