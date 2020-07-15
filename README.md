@@ -1,17 +1,17 @@
-# SVG Pack
+# SVG Packer
 
-Pack SVGs to Icon Fonts - In Browser!
+Pack SVGs to Icon Fonts - **In Browser**!
 
 ### NPM
 
 ```bash
-npm i svg-pack
+npm i svg-packer
 ```
 
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/svg-pack"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg-packer"></script>
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ npm i svg-pack
 Packing:
 
 ```js
-const result = await SvgPack({
+const result = await SvgPacker({
   fontName: 'My Awesome Font',
   fileName: 'awesome-font',
   cssPrefix: 'af',

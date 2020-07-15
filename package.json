@@ -1,5 +1,5 @@
 {
-  "name": "svg-pack",
+  "name": "svg-packer",
   "version": "0.0.1",
   "description": "Pack SVGs to Icon Fonts - In Browser!",
   "main": "index.js",
