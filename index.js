@@ -16,7 +16,7 @@ async function SvgPacker({ icons, ...options }) {
   options.fileName = options.fileName || options.fontName
   options.startCodepoint = options.startCodepoint || 0xE001
   options.normalize = true
-  options.fontHeight = options.fontHeight || 150
+  options.fontHeight = options.fontHeight || 1000
   options.descent = options.options || 0
   options.fixedWidth = options || false
 

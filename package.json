@@ -1,6 +1,6 @@
 {
   "name": "svg-packer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Pack SVGs to Icon Fonts - In Browser!",
   "main": "index.js",
   "jsdelivr": "dist/index.browser.js",
@@ -16,8 +16,8 @@
   "dependencies": {
     "jszip": "2.5.0",
     "readable-stream": "latest",
-    "svgicons2svgfont": "9.1.1",
     "svg2ttf": "5.0.0",
+    "svgicons2svgfont": "9.1.1",
     "ttf2eot": "2.0.0",
     "ttf2woff": "2.0.2",
     "ttf2woff2": "^3.0.0"
