@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ESNext", "DOM"],
+    "moduleDetection": "force",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "noEmit": true,
+    "esModuleInterop": false,
+    "skipLibCheck": true,
+    "types": ["@vitest/browser/providers/playwright"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/wasm.js"]
+}

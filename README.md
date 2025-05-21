@@ -55,3 +55,45 @@ Use:
 <!-- Use the icon! -->
 <i class="af pencil"></i>
 ```
+
+## Vite
+
+From version `v1.0.0` you can use `svg-packer` with Vite:
+
+// StackBlitz link + SB script
+
+Add the following plugin to your `vite.config.ts`: file
+
+```js
+// vite.config.ts
+import { defineConfig } from 'vite'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
+
+export default defineConfig({
+  plugins: [nodePolyfills({
+    include: [
+      'buffer',
+      'fs',
+      'path',
+      'stream',
+      'string_decoder',
+    ],
+    protocolImports: true,
+  })],
+})
+```
+
+then in your logic use static or dynamic import:
+
+```ts
+import { SvgPacker } from 'svg-packer'
+
+const result = await SvgPacker({ /* options */ })
+// Download zip with all files
+save(result.zip.url)
+save(result.zip.blob)
+```
+
+## License
+
+MIT License © 2020-PRESENT [Anthony Fu](https://github.com/antfu)

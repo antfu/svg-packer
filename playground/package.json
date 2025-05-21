@@ -1,0 +1,17 @@
+{
+  "name": "playground",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "svg-packer": "workspace:*"
+  },
+  "devDependencies": {
+    "vite-plugin-node-polyfills": "^0.23.0"
+  }
+}
