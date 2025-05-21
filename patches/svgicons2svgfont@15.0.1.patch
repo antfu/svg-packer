@@ -1,0 +1,22 @@
+diff --git a/dist/index.js b/dist/index.js
+index 11837592a43a2cd134a3739c8eb65814aa810c71..45449b2d1e8bce6e0525a8e2fd4363fb62948c5c 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -2,13 +2,13 @@ import { Transform } from 'stream';
+ import Sax from 'sax';
+ import { SVGPathData } from 'svg-pathdata';
+ import svgShapesToPath from './svgshapes2svgpath.js';
+-import { scale, translate, compose, fromDefinition, fromTransformAttribute, } from 'transformation-matrix';
++import { scale, translate, compose, fromDefinition, fromTransformAttribute } from 'transformation-matrix';
+ import { YError } from 'yerror';
+ import debug from 'debug';
+ const warn = debug('svgicons2svgfont');
+-export { fileSorter } from './filesorter.js';
+-export * from './iconsdir.js';
+-export * from './metadata.js';
++// export { fileSorter } from './filesorter.js';
++// export * from './iconsdir.js';
++// export * from './metadata.js';
+ function matrixFromTransformAttribute(transformAttributeString) {
+     return compose(fromDefinition(fromTransformAttribute(transformAttributeString)));
+ }
