@@ -2,16 +2,6 @@ import { isCI } from 'std-env'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  /* plugins: [nodePolyfills({
-    include: [
-      'buffer',
-      'fs',
-      'path',
-      'stream',
-      'string_decoder',
-    ],
-    protocolImports: true,
-  })], */
   test: {
     workspace: [
       {
