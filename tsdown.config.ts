@@ -9,7 +9,7 @@ import { defineConfig } from 'tsdown/config'
 const root = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-  entry: 'src/index.ts',
+  entry: ['src/index.ts', 'src/vite.ts'],
   platform: 'node',
   format: 'esm',
   target: 'node16',
