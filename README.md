@@ -2,7 +2,7 @@
 
 Pack SVGs to Icon Fonts - **In Browser**!
 
-> This was born from [Icônes](https://github.com/antfu/iconify-explorer), an icon explorer that allows you to choice from 6,000+ icons then pack what you want into iconfonts! Do check it out :)
+> This was born from [Icônes](https://github.com/antfu-collective/icones), an icon explorer that allows you to choice from 6,000+ icons then pack what you want into iconfonts! Do check it out :)
 
 ### NPM
 
