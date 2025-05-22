@@ -34,4 +34,5 @@ jobs:
         run: pnpm build
 
       - name: Release
-        run: pnpm dlx pkg-pr-new publish --compact --no-template --pnpm
+        run: pnpm dlx pkg-pr-new publish --no-template --pnpm
+        # run: pnpm dlx pkg-pr-new publish --compact --no-template --pnpm
