@@ -10,9 +10,10 @@ const root = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
   entry: ['src/index.ts', 'src/vite.ts'],
-  platform: 'node',
+  platform: 'browser',
   format: 'esm',
   target: 'node16',
+  external: ['sax'],
   dts: true,
   outExtensions() {
     return {

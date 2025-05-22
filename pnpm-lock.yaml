@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  svgicons2svgfont@15.0.1:
-    hash: f028b0f90560d8ea20dae952337b3695703f0012546f07d5cfa48d0ede554d60
-    path: patches/svgicons2svgfont@15.0.1.patch
-
 importers:
 
   .:
@@ -25,9 +20,6 @@ importers:
       svg2ttf:
         specifier: 6.0.3
         version: 6.0.3
-      svgicons2svgfont:
-        specifier: ^15.0.1
-        version: 15.0.1(patch_hash=f028b0f90560d8ea20dae952337b3695703f0012546f07d5cfa48d0ede554d60)
       ttf2eot:
         specifier: 3.1.0
         version: 3.1.0
@@ -65,6 +57,9 @@ importers:
       std-env:
         specifier: ^3.9.0
         version: 3.9.0
+      svgicons2svgfont:
+        specifier: 15.0.1
+        version: 15.0.1
       tsdown:
         specifier: ^0.12.2
         version: 0.12.2(typescript@5.8.3)
@@ -6050,7 +6045,7 @@ snapshots:
       microbuffer: 1.0.0
       svgpath: 2.6.0
 
-  svgicons2svgfont@15.0.1(patch_hash=f028b0f90560d8ea20dae952337b3695703f0012546f07d5cfa48d0ede554d60):
+  svgicons2svgfont@15.0.1:
     dependencies:
       '@types/sax': 1.2.7
       commander: 12.1.0
