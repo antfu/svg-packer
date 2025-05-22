@@ -45,7 +45,7 @@ export interface SvgPackerOptions {
   }[]
 }
 
-export const FontExtensions = ['eot', 'ttf', 'woff', 'woff2', 'svg'] as const
+export const FontExtensions = ['eot', 'ttf', 'woff', 'woff2', 'svg', 'css', 'demoHTML'] as const
 export type FontExtension = typeof FontExtensions[number]
 
 export interface SvgPackerResult {
@@ -121,7 +121,7 @@ export async function SvgPacker({ icons, ...options }: SvgPackerOptions): Promis
 function addFile(
   files: SvgPackerResult['files'],
   filename: string,
-  ext: string,
+  ext: FontExtension,
   data: BufferLike,
   mime = 'text/plain',
 ) {
