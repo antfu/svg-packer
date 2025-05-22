@@ -188,8 +188,9 @@ async function browserPromise() {
 }
 
 async function preloadWasm() {
+  const SB = process?.env?.SHELL === '/bin/jsh' && process?.versions?.webcontainer
   const isNode: boolean
-      = typeof process < 'u'
+      = !SB && typeof process < 'u'
         && typeof process.stdout < 'u'
         && !process.versions?.deno
         && !globalThis.window
