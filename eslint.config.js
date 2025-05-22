@@ -6,10 +6,6 @@ export default antfu({
     '**/node_modules/**',
     // dont change vite layout: pnpm create vite > Vanilla > TypesScript
     '**/playground/tsconfig.json',
-    '**/__mocks__/**',
-    '**/__fixtures__/**',
-    '**/__generated__/**',
-    '**/__playground__/**',
     './src/wasm.js',
   ],
 }, {
