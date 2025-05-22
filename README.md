@@ -80,6 +80,15 @@ export default defineConfig({
     ],
     protocolImports: true,
   })],
+  optimizeDeps: {
+    include: [
+      'vite-plugin-node-polyfills/shims/buffer',
+      'vite-plugin-node-polyfills/shims/global',
+      'vite-plugin-node-polyfills/shims/process',
+      'node:stream',
+      'node:string_decoder',
+    ],
+  },
 })
 ```
 
@@ -92,6 +101,14 @@ const result = await SvgPacker({ /* options */ })
 // Download zip with all files
 save(result.zip.url)
 save(result.zip.blob)
+
+// Download individual font files
+save(result.files.svg.url) // svg font
+save(result.files.ttf.url)
+save(result.files.woff.url)
+save(result.files.woff2.url)
+save(result.files.css.url)
+save(result.files.demoHTML.url)
 ```
 
 ## License
