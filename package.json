@@ -24,7 +24,9 @@
   "types": "dist/index.d.mts",
   "typesVersions": {
     "*": {
-      "vite": ["dist/vite.d.mts"]
+      "vite": [
+        "dist/vite.d.mts"
+      ]
     }
   },
   "files": [
@@ -38,6 +40,7 @@
     "dev:serve": "nr prepack && pnpx serve .",
     "release": "bumpp && npm publish",
     "test:node": "vitest --project=node",
+    "test:node:ui": "vitest --project=node --open --ui",
     "test:browser": "vitest --project=browser",
     "test:browser:headless": "CI=true vitest --project=browser",
     "test": "tsc --noEmit && vitest",
@@ -57,6 +60,7 @@
     "@antfu/eslint-config": "^4.13.1",
     "@antfu/ni": "^24.4.0",
     "@vitest/browser": "^3.1.4",
+    "@vitest/ui": "^3.1.4",
     "bumpp": "^10.1.1",
     "esbuild": "^0.25.4",
     "eslint": "^9.27.0",
