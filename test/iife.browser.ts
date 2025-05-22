@@ -1,86 +1,78 @@
 import type { SvgPackerResult } from '../src'
 import { expect, it } from 'vitest'
+import { appendIconsToTheDomBody, expectedFontName, options, replaceCssFontUrls } from './shared'
 
 it('svg-packer in the browser', async () => {
   expect('SvgPacker' in globalThis).toBeTruthy()
-  const result: SvgPackerResult = await globalThis.SvgPacker({
-    icons: [{
-      svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="50" />
-</svg>`,
-      name: 'icon1',
-    }],
-  })
+  const result: SvgPackerResult = await globalThis.SvgPacker(options)
   expect(result.files).toBeTruthy()
   expect(Array.from(Object.values(result.files)).map(m => m.name)).toMatchInlineSnapshot(`
-      [
-        "iconfont.svg",
-        "iconfont.ttf",
-        "iconfont.eot",
-        "iconfont.woff",
-        "iconfont.woff2",
-        "iconfont.css",
-        "_demo.html",
-      ]
-    `)
+    [
+      "maf.svg",
+      "maf.ttf",
+      "maf.eot",
+      "maf.woff",
+      "maf.woff2",
+      "maf.css",
+      "_demo.html",
+    ]
+  `)
   const css = result.files.css
   expect(css).toBeTruthy()
   expect(css.blob).toBeTruthy()
   expect(css.blob.size).toBeGreaterThan(0)
   let cssContent = await css.blob.text()
   expect(cssContent).toMatchInlineSnapshot(`
-      "
-      @font-face {
-        font-family: "iconfont";
-        src: url("./iconfont.eot");
-        src: url("./iconfont.eot") format("embedded-opentype"),
-             url("./iconfont.ttf") format("truetype"),
-             url("./iconfont.woff") format("woff"),
-             url("./iconfont.woff2") format("woff2"),
-             url("./iconfont.svg") format("svg");
-        font-weight: normal;
-        font-style: normal;
-      }
+    "
+    @font-face {
+      font-family: "My Awesome Font";
+      src: url("./maf.eot");
+      src: url("./maf.eot") format("embedded-opentype"),
+           url("./maf.ttf") format("truetype"),
+           url("./maf.woff") format("woff"),
+           url("./maf.woff2") format("woff2"),
+           url("./maf.svg") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-      .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 1em;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+    .i {
+      font-family: "My Awesome Font" !important;
+      font-size: 1em;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
 
-      .iconfont.icon1:before {
-      content: "\\e001";
-      }
+    .i.mdi\\:account-edit:before {
+    content: "\\e001";
+    }
 
-      "
-    `)
-  cssContent = cssContent
-    .replace(/"\.\/iconfont\.eot"/g, result.files.eot.url)
-    .replace('"./iconfont.ttf"', result.files.ttf.url)
-    .replace('"./iconfont.woff"', result.files.woff.url)
-    .replace('"./iconfont.woff2"', result.files.woff2.url)
-    .replace('"./iconfont.svg"', result.files.svg.url)
+    .i.mdi\\:account-tie:before {
+    content: "\\e002";
+    }
+
+    "
+  `)
+  cssContent = replaceCssFontUrls(cssContent, result)
   const style = globalThis.document.createElement('style')
   style.textContent = `${cssContent}    
 i {
   padding: 5px;
   color: #717171;
   display: inline-block;
+  font-size: 1.2em;
 }
 `
   globalThis.document.head.append(style)
   await new Promise(resolve => setTimeout(resolve, 100))
-  const icon = globalThis.document.createElement('i')
-  icon.className = `i iconfont icon1`
-  icon.setAttribute('data-test-id', 'icon1')
-  globalThis.document.body.append(icon)
-  await new Promise(resolve => setTimeout(resolve, 100))
-  const before = globalThis.getComputedStyle(icon, ':before')
-  expect(before).toBeTruthy()
-  expect(before.content).toBeTruthy()
-  expect(before.fontFamily).toBe('iconfont')
-  expect(before.fontStyle).toBe('normal')
+  const iconDeclarations = await appendIconsToTheDomBody()
+  const fontName = expectedFontName(options)
+  for (const { css } of iconDeclarations) {
+    expect(css).toBeTruthy()
+    expect(css.content).toBeTruthy()
+    expect(css.fontFamily).toBe(fontName)
+    expect(css.fontStyle).toBe('normal')
+  }
 })
