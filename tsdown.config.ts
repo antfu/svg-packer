@@ -38,7 +38,7 @@ export default defineConfig({
         plugins: [plugin(stdLibBrowser)],
       })
       // will require the user to use SvgPacker.SvgPacker({...}) instead SvgPacker({...})
-      // this code will patch the default export
+      // this code will patch the export to use SvgPacker.SvgPacker
       await editFile(path.resolve(root, './dist/index.browser.js'), (content) => {
         return content.replace(
           'return __toCommonJS(index_exports);',
