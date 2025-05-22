@@ -1,4 +1,5 @@
 import type { BufferLike, InputWithSizeMeta } from 'client-zip'
+import type { FileExtension } from './utils'
 import * as buffer from 'node:buffer'
 import * as process from 'node:process'
 import { PassThrough } from 'node:stream'
@@ -8,6 +9,9 @@ import svg2ttf from 'svg2ttf'
 import { SVGIcons2SVGFontStream } from 'svgicons2svgfont'
 import ttf2eot from 'ttf2eot'
 import ttf2woff from 'ttf2woff'
+
+export type { FileExtension } from './utils'
+export { FileExtensions } from './utils'
 
 export interface SvgPackerOptions {
   /**
@@ -45,11 +49,8 @@ export interface SvgPackerOptions {
   }[]
 }
 
-export const FontExtensions = ['eot', 'ttf', 'woff', 'woff2', 'svg', 'css', 'demoHTML'] as const
-export type FontExtension = typeof FontExtensions[number]
-
 export interface SvgPackerResult {
-  files: Record<FontExtension, {
+  files: Record<FileExtension, {
     name: string
     blob: Blob
     url?: string
@@ -121,7 +122,7 @@ export async function SvgPacker({ icons, ...options }: SvgPackerOptions): Promis
 function addFile(
   files: SvgPackerResult['files'],
   filename: string,
-  ext: FontExtension,
+  ext: FileExtension,
   data: BufferLike,
   mime = 'text/plain',
 ) {

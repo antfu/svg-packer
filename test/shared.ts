@@ -1,4 +1,6 @@
 import type { SvgPackerOptions, SvgPackerResult } from '../src'
+import type { FileExtension } from '../src/utils'
+import { FileExtensions } from '../src/utils'
 
 export const options = {
   fontName: 'My Awesome Font',
@@ -16,13 +18,10 @@ export const options = {
   ],
 } satisfies SvgPackerOptions
 
-const FontExtensions = ['eot', 'ttf', 'woff', 'woff2', 'svg'] as const
-type FontExtension = typeof FontExtensions[number]
-
-const fonts = FontExtensions.reduce((acc, ext) => {
+const fonts = FileExtensions.reduce((acc, ext) => {
   acc[ext] = new RegExp(`"./${options.fileName}.${ext}"`, 'g')
   return acc
-}, {} as Record<FontExtension, RegExp>)
+}, {} as Record<FileExtension, RegExp>)
 
 export function replaceCssFontUrls(css: string, result: SvgPackerResult): string {
   return css
