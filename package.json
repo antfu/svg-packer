@@ -35,7 +35,7 @@
     "test:browser": "vitest --project=browser",
     "test:browser:headless": "CI=true vitest --project=browser",
     "test": "tsc --noEmit && vitest",
-    "test:ci": "tsc --noEmit && vitest --browser --browser.name chromium run"
+    "test:ci": "tsc --noEmit && vitest run"
   },
   "dependencies": {
     "client-zip": "2.5.0",
