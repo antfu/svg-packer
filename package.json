@@ -29,6 +29,7 @@
     "lint:fix": "nr lint --fix",
     "prepack": "tsup",
     "postinstall": "node scripts/pack-wasm.js",
+    "dev:serve": "nr prepack && pnpx serve .",
     "release": "bumpp && npm publish",
     "test:node": "vitest --project=node",
     "test:browser": "vitest --project=browser",
