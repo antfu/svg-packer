@@ -14,7 +14,7 @@ export default defineConfig({
   async onSuccess() {
     await build({
       entryPoints: [path.resolve('dist/index.js')],
-      outfile: path.resolve('dist/index.iife.js'),
+      outfile: path.resolve('dist/index.browser.js'),
       bundle: true,
       format: 'iife',
       // dont't add globalName, it won't work since it will be exposed as SvgPacker.SvgPacker instead of SvgPacker
