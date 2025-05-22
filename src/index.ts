@@ -10,11 +10,29 @@ import ttf2eot from 'ttf2eot'
 import ttf2woff from 'ttf2woff'
 
 export interface SvgPackerOptions {
+  /**
+   * @default 'iconfont'
+   */
   fontName?: string
+  /**
+   * @default 'iconfont'
+   */
   cssPrefix?: string
+  /**
+   * @default 'iconfont'
+   */
   fileName?: string
+  /**
+   * @default 'iconfont'
+   */
   startCodepoint?: number
+  /**
+   * @default 1000
+   */
   fontHeight?: number
+  /**
+   * @default 0
+   */
   descent?: number
   /**
    * @default false
@@ -27,8 +45,11 @@ export interface SvgPackerOptions {
   }[]
 }
 
+export const FontExtensions = ['eot', 'ttf', 'woff', 'woff2', 'svg'] as const
+export type FontExtension = typeof FontExtensions[number]
+
 export interface SvgPackerResult {
-  files: Record<string, {
+  files: Record<FontExtension, {
     name: string
     blob: Blob
     url?: string
