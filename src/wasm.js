@@ -110,6 +110,10 @@ async function loadWasmModule(info) {
     try {
         const response = await wasmPromise();
 
+        if (!response) {
+            throw new Error('no response when fetching WASM file');
+        }
+
         if (!response.ok) {
             throw new Error(`error fetching WASM file: ${response.status} ${response.statusText}`);
         }
