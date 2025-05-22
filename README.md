@@ -60,7 +60,7 @@ Use:
 
 From version `v1.0.0` you can use `svg-packer` with Vite:
 
-// StackBlitz link + SB script
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/antfu/svg-packer)
 
 Add the following plugin to your `vite.config.ts` file
 
