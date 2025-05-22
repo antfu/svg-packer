@@ -16,6 +16,13 @@ npm i svg-packer
 <script src="https://cdn.jsdelivr.net/npm/svg-packer"></script>
 ```
 
+### Playground
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/antfu/svg-packer)
+
+> [!NOTE]
+> The Vitest test won't work in StackBlitz, the Vite playground will be started.
+
 ## Usage
 
 Packing:
@@ -59,8 +66,6 @@ Use:
 ## Vite
 
 From version `v1.0.0` you can use `svg-packer` with Vite:
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/antfu/svg-packer)
 
 Add the following plugin to your `vite.config.ts` file
 
