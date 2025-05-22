@@ -1,7 +1,5 @@
 packages:
   - playground
-patchedDependencies:
-  svgicons2svgfont@15.0.1: patches/svgicons2svgfont@15.0.1.patch
 onlyBuiltDependencies:
   - esbuild
   - ttf2woff2
