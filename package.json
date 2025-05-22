@@ -74,6 +74,6 @@
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommand": "pnpm -C playground run dev"
+    "startCommand": "nr prepack && pnpm -C playground run dev"
   }
 }

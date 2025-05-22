@@ -21,7 +21,7 @@ npm i svg-packer
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/antfu/svg-packer)
 
 > [!NOTE]
-> The Vitest test won't work in StackBlitz, the Vite playground will be started.
+> The Vitest tests won't work in StackBlitz, the Vite playground will be started.
 
 ## Usage
 
