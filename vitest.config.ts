@@ -25,7 +25,7 @@ export default defineConfig({
       },
       {
         test: {
-          setupFiles: './dist/index.iife.js',
+          setupFiles: './dist/index.browser.js',
           include: [
             'test/*.browser.ts',
           ],
