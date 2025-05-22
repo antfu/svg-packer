@@ -62,33 +62,15 @@ From version `v1.0.0` you can use `svg-packer` with Vite:
 
 // StackBlitz link + SB script
 
-Add the following plugin to your `vite.config.ts`: file
+Add the following plugin to your `vite.config.ts` file
 
 ```js
 // vite.config.ts
 import { defineConfig } from 'vite'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import { SvgPackerVitePlugin } from 'svg-packer/vite'
 
 export default defineConfig({
-  plugins: [nodePolyfills({
-    include: [
-      'buffer',
-      'fs',
-      'path',
-      'stream',
-      'string_decoder',
-    ],
-    protocolImports: true,
-  })],
-  optimizeDeps: {
-    include: [
-      'vite-plugin-node-polyfills/shims/buffer',
-      'vite-plugin-node-polyfills/shims/global',
-      'vite-plugin-node-polyfills/shims/process',
-      'node:stream',
-      'node:string_decoder',
-    ],
-  },
+  plugins: [SvgPackerVitePlugin()],
 })
 ```
 

@@ -16,6 +16,9 @@ importers:
       client-zip:
         specifier: 2.5.0
         version: 2.5.0
+      node-stdlib-browser:
+        specifier: ^1.3.1
+        version: 1.3.1
       readable-stream:
         specifier: latest
         version: 4.7.0
@@ -23,7 +26,7 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       svgicons2svgfont:
-        specifier: 15.0.1
+        specifier: ^15.0.1
         version: 15.0.1(patch_hash=f028b0f90560d8ea20dae952337b3695703f0012546f07d5cfa48d0ede554d60)
       ttf2eot:
         specifier: 3.1.0
@@ -34,6 +37,9 @@ importers:
       ttf2woff2:
         specifier: 6.0.1
         version: 6.0.1
+      vite-plugin-node-polyfills:
+        specifier: ^0.23.0
+        version: 0.23.0(rollup@4.41.0)(vite@6.3.5(@types/node@22.15.21)(jiti@2.4.2)(yaml@2.8.0))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.13.1
@@ -53,9 +59,6 @@ importers:
       eslint:
         specifier: ^9.27.0
         version: 9.27.0(jiti@2.4.2)
-      node-stdlib-browser:
-        specifier: ^1.3.1
-        version: 1.3.1
       playwright:
         specifier: ^1.52.0
         version: 1.52.0
@@ -71,9 +74,6 @@ importers:
       vite:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@22.15.21)(jiti@2.4.2)(yaml@2.8.0)
-      vite-plugin-node-polyfills:
-        specifier: ^0.23.0
-        version: 0.23.0(rollup@4.41.0)(vite@6.3.5(@types/node@22.15.21)(jiti@2.4.2)(yaml@2.8.0))
       vitest:
         specifier: 3.1.4
         version: 3.1.4(@types/debug@4.1.12)(@types/node@22.15.21)(@vitest/browser@3.1.4)(jiti@2.4.2)(yaml@2.8.0)
