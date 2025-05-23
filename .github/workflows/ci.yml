@@ -12,6 +12,13 @@ on:
   workflow_dispatch: {}
   merge_group: {}
 
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.cache/ms-playwright
+
 jobs:
   ci:
     strategy:
@@ -32,6 +39,9 @@ jobs:
 
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Dependencies
+        run: pnpm exec playwright install chromium --with-deps --only-shell
 
       - name: 📝 Lint
         run: pnpm lint
