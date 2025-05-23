@@ -23,6 +23,7 @@ export default defineConfig({
           browser: {
             enabled: true,
             headless: isCI,
+            provider: 'playwright',
             instances: [
               { browser: 'chromium' },
             ],
