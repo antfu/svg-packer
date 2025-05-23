@@ -3,7 +3,7 @@ import { expect, it } from 'vitest'
 
 import '../src/main'
 
-it('svg-packer in Node', async () => {
+it('svg-packer in Vite', async () => {
   await expect.poll(() => 'SvgPacker' in window).toBeTruthy()
 
   const download = page.getByRole('link', { hasText: 'Download' })
