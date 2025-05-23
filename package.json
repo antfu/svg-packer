@@ -43,8 +43,11 @@
     "test:node:ui": "vitest --project=node --open --ui",
     "test:browser": "vitest --project=browser",
     "test:browser:headless": "CI=true vitest --project=browser",
+    "test:playground": "pnpm -C playground run test",
+    "test:playground:headless": "pnpm -C playground run test:headless",
     "test": "tsc --noEmit && vitest",
-    "test:ci": "tsc --noEmit && vitest run"
+    "test:ci": "tsc --noEmit && vitest run && nr test:playground:ci",
+    "test:headless": "tsc --noEmit && nr test:node && nr test:browser:headless && nr test:playground:headless"
   },
   "dependencies": {
     "client-zip": "2.5.0",
