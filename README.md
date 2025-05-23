@@ -71,8 +71,8 @@ Add the following plugin to your `vite.config.ts` file
 
 ```js
 // vite.config.ts
-import { defineConfig } from 'vite'
 import { SvgPackerVitePlugin } from 'svg-packer/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [SvgPackerVitePlugin()],
