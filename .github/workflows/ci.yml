@@ -1,0 +1,44 @@
+name: ci
+
+permissions: {}
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch: {}
+  merge_group: {}
+
+jobs:
+  ci:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      # workaround for npm registry key change
+      # ref. `pnpm@10.1.0` / `pnpm@9.15.4` cannot be installed due to key id mismatch · Issue #612 · nodejs/corepack
+      # - https://github.com/nodejs/corepack/issues/612#issuecomment-2629496091
+      - run: npm i -g --force corepack && corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: 📦 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 📝 Lint
+        run: pnpm lint
+
+      - name: 🚧 Build project
+        run: pnpm prepack
+
+      - name: 🧪 Test project
+        run: pnpm test:ci
+        timeout-minutes: 10
