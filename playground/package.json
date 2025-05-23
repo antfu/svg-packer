@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:headless": "CI=true vitest run",
+    "test:ci": "vitest run"
   },
   "dependencies": {
     "svg-packer": "workspace:*"
