@@ -42,12 +42,13 @@
     "test:node": "vitest --project=node",
     "test:node:run": "vitest --project=node run",
     "test:node:ui": "vitest --project=node --open --ui",
-    "test:browser": "vitest --project=browser",
-    "test:browser:headless": "CI=true vitest --project=browser",
+    "test:browser": "vitest --config=vitest.browser.config.ts",
+    "test:browser:preview": "vitest --project=browser",
+    "test:browser:headless": "CI=true vitest --config=vitest.browser.config.ts",
     "test:playground": "pnpm -C playground run test",
     "test:playground:headless": "pnpm -C playground run test:headless",
     "test": "tsc --noEmit && vitest",
-    "test:ci": "tsc --noEmit && vitest run && nr test:playground:ci",
+    "test:ci": "tsc --noEmit && nr test:node:run && nr test:browser && nr test:playground:ci",
     "test:headless": "tsc --noEmit && nr test:node:run && nr test:browser:headless && nr test:playground:headless"
   },
   "dependencies": {

@@ -13,6 +13,8 @@ export default defineConfig({
           environment: 'node',
         },
       },
+      // this test is about testing the iife with the preview provider
+      // won't run in the CI, and the test will be skipped
       {
         test: {
           setupFiles: './dist/index.browser.js',
@@ -21,9 +23,8 @@ export default defineConfig({
           ],
           name: 'browser',
           browser: {
-            enabled: true,
-            headless: isCI,
-            provider: 'playwright',
+            enabled: !isCI,
+            provider: 'preview',
             instances: [
               { browser: 'chromium' },
             ],

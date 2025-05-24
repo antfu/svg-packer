@@ -1,8 +1,11 @@
 import type { SvgPackerResult } from '../src'
+import { server } from '@vitest/browser/context'
+import { isCI } from 'std-env'
 import { expect, it } from 'vitest'
 import { appendIconsToTheDomBody, expectedFontName, options, replaceCssFontUrls } from './shared'
 
-it('svg-packer in the browser', async () => {
+// this test shouldn't run when using the preview provider and running the test in the CI
+it.skipIf(isCI && server.provider === 'preview')('svg-packer in the browser', async () => {
   expect('SvgPacker' in globalThis).toBeTruthy()
   const result: SvgPackerResult = await globalThis.SvgPacker(options)
   expect(result.files).toBeTruthy()
