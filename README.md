@@ -103,7 +103,7 @@ save(result.files.demoHTML.url)
 We're using [Vitest](https://vitest.dev) for testing the library, you can run the following tests in your local environment using the following scripts from the root folder:
 - `test:node`: run ESM test in Node in watch mode ([esm.test.ts](./test/esm.test.ts))
 - `test:node:run`: run ESM test in Node without the watch mode ([esm.test.ts](./test/esm.test.ts))
-- `test:node:ui`: run ESM test in Node without the watch mode with Vitest UI reporter ([esm.test.ts](./test/esm.test.ts))
+- `test:node:ui`: run ESM test in Node in watch mode with Vitest UI reporter ([esm.test.ts](./test/esm.test.ts))
 - `test:browser`: run IIFE test in the browser in watch mode using Vitest Browser mode with Playwright ([iife.browser.ts](./test/iife.browser.ts))
 - `test:browser:headless`: run IIFE test in the browser using Vitest Browser mode with Playwright with the headless mode ([iife.browser.ts](./test/iife.browser.ts))
 - `test:browser:preview`: run IIFE test in the browser in watch mode using Vitest Browser mode with your default browser ([iife.browser.ts](./test/iife.browser.ts))
