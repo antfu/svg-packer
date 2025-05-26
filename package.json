@@ -1,7 +1,7 @@
 {
   "name": "svg-packer",
   "type": "module",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "packageManager": "pnpm@10.11.0",
   "description": "Pack SVGs to Icon Fonts - In Browser!",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
