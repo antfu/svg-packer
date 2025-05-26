@@ -48,6 +48,7 @@
     "test:browser:preview": "vitest --project=browser",
     "test:browser:headless": "CI=true vitest --config=vitest.browser.config.ts",
     "test:playground": "pnpm -C playground run test",
+    "test:playground:ci": "pnpm -C playground run test:ci",
     "test:playground:headless": "pnpm -C playground run test:headless",
     "test": "tsc --noEmit && vitest",
     "test:ci": "tsc --noEmit && nr test:node:run && nr test:browser && nr test:playground:ci",
