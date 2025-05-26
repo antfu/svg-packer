@@ -40,7 +40,7 @@
     "prepare": "node scripts/pack-wasm.js",
     "dev:serve": "nr prepack && pnpx serve .",
     "play": "nr -C playground dev",
-    "release": "bumpp && npm publish",
+    "release": "bumpp && pnpm publish",
     "test:node": "vitest --project=node",
     "test:node:run": "vitest --project=node run",
     "test:node:ui": "vitest --project=node --open --ui",
