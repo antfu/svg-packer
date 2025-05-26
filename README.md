@@ -100,6 +100,11 @@ save(result.files.demoHTML.url)
 
 ## Running tests in your local environment
 
+> [!NOTE]
+> To run the tests in your local environment, you will need:
+>   - Node 22 LTS or later
+>   - Install playwright browsers by running `pnpm exec playwright install`
+
 We're using [Vitest](https://vitest.dev) for testing the library, you can run the following tests in your local environment using the following scripts from the root folder:
 - `test:node`: run ESM test in Node in watch mode ([esm.test.ts](./test/esm.test.ts))
 - `test:node:run`: run ESM test in Node without the watch mode ([esm.test.ts](./test/esm.test.ts))
