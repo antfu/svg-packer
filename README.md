@@ -13,7 +13,7 @@ npm i svg-packer
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/svg-packer"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg-packer@1.0"></script>
 ```
 
 ### Playground
