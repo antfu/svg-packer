@@ -35,9 +35,11 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
-    "prepack": "tsdown",
-    "postinstall": "node scripts/pack-wasm.js",
+    "build": "tsdown",
+    "prepack": "nr build",
+    "prepare": "node scripts/pack-wasm.js",
     "dev:serve": "nr prepack && pnpx serve .",
+    "play": "nr -C playground dev",
     "release": "bumpp && npm publish",
     "test:node": "vitest --project=node",
     "test:node:run": "vitest --project=node run",
@@ -62,7 +64,7 @@
     "vite-plugin-node-polyfills": "^0.23.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.13.1",
+    "@antfu/eslint-config": "^4.13.2",
     "@antfu/ni": "^24.4.0",
     "@vitest/browser": "^3.1.4",
     "@vitest/ui": "^3.1.4",
@@ -72,7 +74,7 @@
     "playwright": "^1.52.0",
     "std-env": "^3.9.0",
     "svgicons2svgfont": "15.0.1",
-    "tsdown": "^0.12.2",
+    "tsdown": "^0.12.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vitest": "3.1.4"
